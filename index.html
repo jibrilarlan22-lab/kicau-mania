@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KICAU MANIA - Hand Gesture AI</title>
+  <meta name="description" content="Aplikasi AI interaktif yang mendeteksi gerakan tangan dan menampilkan stiker kucing animasi secara real-time.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>KICAU <span>MANIA</span></h1>
+      <p>Ikuti perintah di bawah ini saat tampilan kamera muncul:</p>
+    </div>
+
+    <div class="video-container">
+      <video id="webcam" autoplay playsinline></video>
+
+      <!-- cat-video TIDAK boleh display:none agar canvas bisa baca frame-nya -->
+      <video id="cat-video" src="new_vidio.mp4" loop playsinline></video>
+
+      <canvas id="sticker-canvas"></canvas>
+
+      <div id="status-badge" class="badge">
+        <div class="spinner"></div> Loading KICAUUU...
+      </div>
+
+      <!-- Start overlay: wajib ada agar autoplay audio/video tidak diblokir browser -->
+      <div id="start-overlay" class="overlay">
+        <div style="text-align:center; padding: 2rem;">
+          <div style="font-size:4rem; margin-bottom:1rem; animation: pulse 1.5s ease-in-out infinite;">🐱</div>
+          <div style="font-size:1.4rem; font-weight:700; margin-bottom:0.5rem;">Ketuk untuk Memulai</div>
+          <div style="font-size:0.9rem; opacity:0.65;">Izinkan akses kamera saat diminta</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="instructions" style="flex-direction: column; gap: 0.5rem; align-items: center;">
+      <div class="instruction-item" style="width: 100%;">
+        <div class="icon">1️⃣</div>
+        <span>Tutup hidung dengan tangan kanan</span>
+      </div>
+      <div class="instruction-item" style="width: 100%;">
+        <div class="icon">2️⃣</div>
+        <span>Arahkan tangan kiri ke depan dan lambaikan</span>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
